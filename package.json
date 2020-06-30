@@ -1,0 +1,24 @@
+{
+  "name": "venbot-ig",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harrykwan/venbot-ig.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harrykwan/venbot-ig/issues"
+  },
+  "homepage": "https://github.com/harrykwan/venbot-ig#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "instagram-scraping": "^1.0.13",
+    "puppeteer": "^4.0.1"
+  }
+}
