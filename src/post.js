@@ -6,7 +6,7 @@ function getlikelist(postid, callback) {
     (async () => {
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
-        await page.goto('https://www.instagram.com/' + userid);
+        await page.goto('https://www.instagram.com/p/' + postid);
 
         // Get the "viewport" of the page, as reported by the page.
         var myresult = await page.evaluate(() => {
@@ -37,4 +37,25 @@ function getlikelist(postid, callback) {
 
 }
 
+
+function gethostid(postid, callback) {
+    (async () => {
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+        await page.goto('https://www.instagram.com/p/' + postid);
+
+        // Get the "viewport" of the page, as reported by the page.
+        var myresult = await page.evaluate(() => {
+
+            return document.getElementsByTagName('header')[0].getElementsByTagName('a')[1].innerText
+
+        });
+
+        await browser.close();
+        callback(myresult)
+    })();
+
+}
+
 exports.getlikelist = getlikelist
+exports.gethostid = this.gethostid

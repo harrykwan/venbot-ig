@@ -19,4 +19,9 @@ function follow(userid, callback) {
 
 }
 
+function getfollower(userid, callback) {
+
+}
+
 exports.follow = follow
+exports.getfollower = this.getfollower
