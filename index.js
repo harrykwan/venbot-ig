@@ -4,14 +4,16 @@ const app = express()
 const port = 3000
 
 
-// igsearch.searchtag('developer', function (result) {
-
-// })
 
 
+app.get('/searchtag/:tag', (req, res) => {
+    igsearch.searchtag(req.params.tag, function (result) {
+        res.send(result)
+    })
+})
 
-app.get('/searchuser', (req, res) => {
-    igsearch.searchuser('yph_ay', function (result) {
+app.get('/searchuser/:userid', (req, res) => {
+    igsearch.searchuser(req.params.userid, function (result) {
         res.send(result)
     })
 })
